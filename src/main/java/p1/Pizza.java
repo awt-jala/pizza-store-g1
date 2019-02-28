@@ -10,6 +10,7 @@ public  abstract class Pizza {
 	public void menu() {
 		System.out.println("PIZZA "+pizzaType);
 	}
+	
 	/*public PizzaTypes getPizzaType() {
 		return pizzaType;
 	}
