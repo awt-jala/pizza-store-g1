@@ -2,7 +2,7 @@ package main.java.p1;
 
 public class PizzaStore {
 	public static void main(String arg[]) {
-		PizzaFactory factory = new PizzaFactory();
+		SimplePizzaFactory factory = new SimplePizzaFactory();
 		Pizza pizza1 = factory.getInstance(PizzaTypes.CHEESE);
 		Pizza pizza2 = factory.getInstance(PizzaTypes.GREEK);
 		Pizza pizza3 = factory.getInstance(PizzaTypes.PEPPERONI);

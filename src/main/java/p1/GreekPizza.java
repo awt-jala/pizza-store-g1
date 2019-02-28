@@ -1,7 +1,7 @@
 package main.java.p1;
 
-public class Greek extends Pizza {
-	Greek(){
+public class GreekPizza extends Pizza {
+	GreekPizza(){
 		super(PizzaTypes.GREEK);
 	}
 

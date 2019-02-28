@@ -1,8 +1,8 @@
 package main.java.p1;
 
-public class Cheese extends Pizza {
+public class CheesePizza extends Pizza {
 
-Cheese(){
+CheesePizza(){
 	super(PizzaTypes.CHEESE);
 }
 }
