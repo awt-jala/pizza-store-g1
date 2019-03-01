@@ -2,7 +2,10 @@ package main.java.p1;
 
 public class CheesePizza extends Pizza {
 
-CheesePizza(){
+public CheesePizza(){
 	super(PizzaTypes.CHEESE);
 }
+
+
+
 }

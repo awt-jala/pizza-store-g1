@@ -18,18 +18,18 @@ public class MainDeTesteo {
 		Pizza pizza4 = factory.create(PizzaTypes.VEGGIE);
 
 		
-		pizza1.menu();
-		pizza2.menu();
-		pizza3.menu();
-		pizza4.menu();
+		pizza1.PrintType();
+		pizza2.PrintType();
+		pizza3.PrintType();
+		pizza4.PrintType();
 		
-		Ingredients extras = new Ingredients();
+		/*Ingredients extras = new Ingredients();
 		extras.setChampignone(true);
 		extras.setPineapple(true);
-		extras.
+		//extras.
 		
 		System.out.println("el extra de champiñoñ es: "+ extras.champignone );
-		
+		*/
 	}
 
 	

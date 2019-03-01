@@ -7,8 +7,10 @@ public  abstract class Pizza {
 		this.pizzaType = pizzaType;
 	}
 
-	public void menu() {
-		System.out.println("PIZZA "+pizzaType);
+	public String PrintType2() {
+		String type="PIZZA "+pizzaType;
+				//+pizzaType);
+	return type;
 	}
 	
 	/*public PizzaTypes getPizzaType() {
