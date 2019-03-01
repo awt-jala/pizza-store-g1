@@ -1,13 +1,15 @@
 
-public class orderPizza (String type) 
+public class orderPizza () 
 {
-  Pizza pizza;
+  int quantity;
+  arraylist pizzatype;
   
-  pizza= factory.createPizza(type);
-  pizza.prepare();
-  pizza.bake();
-  pizza.cut();
-  pizza.box();
-  return pizza;
-  }
+  public int getquantity (){
+	     return quantity;
+	}
+
+	public void setquantity (int quantity){
+	    this.quantity = quantity;
+	}
+ 
 }

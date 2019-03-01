@@ -1,5 +1,5 @@
 package main.java;
 
-public class cheesePizza {
+public class cheesePizza extends Pizza {
 
 }

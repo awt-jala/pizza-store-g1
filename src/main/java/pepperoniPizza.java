@@ -1,5 +1,6 @@
 package main.java;
 
-public class pepperoniPizza {
-
+public class pepperoniPizza extends Pizza 
+{
+	double price;
 }
