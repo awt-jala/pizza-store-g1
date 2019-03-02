@@ -20,6 +20,7 @@ class PizzaTest {
 		String Expected= "PIZZA CHEESE";
 	Assert.assertEquals(Expected, Actual);
 	}
+	
 
 	@Test
 	void test_comparar_objetos_clases() {
