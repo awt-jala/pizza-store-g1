@@ -1,5 +1,6 @@
 package main.java.p1;
 
+import java.awt.List;
 import java.util.ArrayList;
 
 public class PizzaStore {
@@ -18,10 +19,32 @@ public class PizzaStore {
 
 	}
 
+
+	public Order createCustomOrder(PizzaTypes type, int quantity,ArrayList<String> IngredientesARemover) {
+		SimplePizzaFactory factory = new SimplePizzaFactory();
+		Pizza pizza = factory.create(type);
+		
+		for (String Ing:IngredientesARemover) {
+			 pizza.optionalIngredients.remove(Ing);
+		}
+		pizza.showIngredients();
+		
+		Order orden = new Order(quantity, pizza);
+
+		
+		
+		return orden;
+
+	}
+
+	
 	public void getOrder(Order orden) {
 	orderList.add(orden);
 }
 
+	
+	
+	
 	/*public void getOrder(PizzaTypes product, int quantity) {
 		orderList.add(createOrder(product, quantity));
 	}*/
