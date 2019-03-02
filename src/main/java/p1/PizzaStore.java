@@ -18,8 +18,12 @@ public class PizzaStore {
 
 	}
 
-	public void getOrder(PizzaTypes product, int quantity) {
+	public void getOrder(Order orden) {
+	orderList.add(orden);
+}
+
+	/*public void getOrder(PizzaTypes product, int quantity) {
 		orderList.add(createOrder(product, quantity));
-	}
+	}*/
 
 }
