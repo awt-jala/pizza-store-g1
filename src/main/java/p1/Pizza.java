@@ -30,6 +30,14 @@ public abstract class Pizza {
 
 	}
 
+	public void aditionIngrediente(String ingredient) {
+
+		optionalIngredients.add(ingredient);
+
+	}
+
+	
+	
 	public String PrintType2() {
 		String type = "PIZZA " + pizzaType;
 		return type;
