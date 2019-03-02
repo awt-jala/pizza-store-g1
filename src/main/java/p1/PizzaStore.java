@@ -9,10 +9,17 @@ public class PizzaStore {
 	public void showMenu() {
 	}
 
-	public Order createOrder (PizzaTypes type, int quantity) {
-		Order orden= new Order(quantity,type);
-		
+	public Order createOrder(PizzaTypes type, int quantity) {
+		SimplePizzaFactory factory = new SimplePizzaFactory();
+		Pizza pizza = factory.create(type);
+		Order orden = new Order(quantity, pizza);
+
 		return orden;
-		
+
 	}
+
+	public void getOrder(PizzaTypes product, int quantity) {
+		orderList.add(createOrder(product, quantity));
+	}
+
 }

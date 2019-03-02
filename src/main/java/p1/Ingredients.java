@@ -2,7 +2,7 @@ package main.java.p1;
 
 public class Ingredients {
 
-	olean souceTomate;
+	boolean souceTomate;
 	boolean spicySouce;
 	boolean sausage;
 	boolean extraCheese;
