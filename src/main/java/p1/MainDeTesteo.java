@@ -17,11 +17,13 @@ public class MainDeTesteo {
 		Pizza pizza3 = factory.create(PizzaTypes.PEPPERONI);
 		Pizza pizza4 = factory.create(PizzaTypes.VEGGIE);
 
+		System.out.println( pizza1.mandatoryIngredients);
+		pizza1.showIngredients();
 		
-		pizza1.PrintType();
-		pizza2.PrintType();
-		pizza3.PrintType();
-		pizza4.PrintType();
+		pizza1.PrintType2();
+		pizza2.PrintType2();
+		pizza3.PrintType2();
+		pizza4.PrintType2();
 		
 		
 		/*Ingredients extras = new Ingredients();

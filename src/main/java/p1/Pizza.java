@@ -1,24 +1,38 @@
 package main.java.p1;
 
-public  abstract class Pizza {
+import java.util.ArrayList;
+
+public abstract class Pizza {
 	private PizzaTypes pizzaType;
+	ArrayList<String> mandatoryIngredients;
+	ArrayList<String> optionalIngredients;
 
 	Pizza(PizzaTypes pizzaType) {
+		mandatoryIngredients = new ArrayList<String>();
+		mandatoryIngredients.add("Chesse");
+		optionalIngredients = new ArrayList<String>();
+		optionalIngredients.add("tomato");
+		optionalIngredients.add("Champignone");
+		optionalIngredients.add("jamon");
+
 		this.pizzaType = pizzaType;
 	}
 
-	public String PrintType2() {
-		String type="PIZZA "+pizzaType;
-				//+pizzaType);
-	return type;
-	}
-	
-	/*public PizzaTypes getPizzaType() {
-		return pizzaType;
+	public void showIngredients() {
+		System.out.println(mandatoryIngredients);
+		System.out.println(optionalIngredients);
+
 	}
 
-public void setPizzaType(PizzaTypes pizzaType) {
-	this.pizzaType=pizzaType;
-}
-*/
+	public void removeIngrediente(String ingredient) {
+
+		optionalIngredients.remove(ingredient);
+
+	}
+
+	public String PrintType2() {
+		String type = "PIZZA " + pizzaType;
+		return type;
+	}
+
 }
