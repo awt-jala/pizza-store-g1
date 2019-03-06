@@ -17,22 +17,31 @@ public class MainDeTesteo {
 		Pizza pizza3 = factory.create(PizzaTypes.PEPPERONI);
 		Pizza pizza4 = factory.create(PizzaTypes.VEGGIE);
 
-		System.out.println( pizza1.mandatoryIngredients);
+		
 		pizza1.showIngredients();
 		
-		pizza1.PrintType2();
+		PizzaStore sucursal1= new PizzaStore();
+		//Order o1=sucursal1.createOrder(PizzaTypes.GREEK, 1);
+		//sucursal1.addToOrderlist(o1);
+		
+		
+		sucursal1.addToOrderlist(sucursal1.createOrder(PizzaTypes.GREEK, 1));
+		sucursal1.addToOrderlist(sucursal1.createOrder(PizzaTypes.CHEESE, 2));
+		
+
+		for(Order o:sucursal1.orderList) {
+			System.out.println(o.getQuantity());
+			System.out.println(o.getPizza().PrintType2());
+		}
+		
+		
+		/*pizza1.PrintType2();
 		pizza2.PrintType2();
 		pizza3.PrintType2();
 		pizza4.PrintType2();
-		
-		
-		/*Ingredients extras = new Ingredients();
-		extras.setChampignone(true);
-		extras.setPineapple(true);
-		//extras.
-		
-		System.out.println("el extra de champiñoñ es: "+ extras.champignone );
 		*/
+		
+		
 	}
 
 	
