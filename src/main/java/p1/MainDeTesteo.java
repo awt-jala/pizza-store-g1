@@ -42,9 +42,20 @@ public class MainDeTesteo {
 
 		Ingredients i = new Ingredients();
 		i.setIngredientsType(IngredientsType.ANCHOES);
-		System.out.println("precio anchoas: "+i.getCostAditionalIngredient(IngredientsType.ANCHOES));
+		i.setPrice();
+		
+		System.out.println("precio anchoas: " + i.getPrice());
 		Ingredients i2 = new Ingredients();
-		i.setIngredientsType(IngredientsType.ASPARAGUS);
+		i2.setIngredientsType(IngredientsType.ASPARAGUS);
+		//i2.updatePrice(IngredientsType.ASPARAGUS, 100.0);
+		i2.setPrice();
+		
+		System.out.println("precio Esparragos: "+i2.getPrice());
+		double suma =0;		
+		
+		suma = i.getPrice()+i2.getPrice();
+		System.out.println("El total es : "+suma);
+		
 		
 		HashSet<Ingredients> lista= new HashSet<Ingredients>();
 		lista.add(i);

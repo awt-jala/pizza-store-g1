@@ -51,7 +51,7 @@ public abstract class Pizza {
 	public double totalCost(HashSet<Ingredients> list) {
 		double sum = 0;
 		for (Ingredients ing : list) {
-			sum = sum + ing.getCostAditionalIngredient(ing.ingredientsType);
+			sum = sum + ing.getPrice();
 		}
 
 		return PIZZA_COST + sum;

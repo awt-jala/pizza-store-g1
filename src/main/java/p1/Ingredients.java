@@ -1,29 +1,36 @@
 package main.java.p1;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class Ingredients {
 
 	IngredientsType ingredientsType;
-	double unitcostAditionalIngredient;
+	double unitcostAditionalIngredient = 0;
+	Map<IngredientsType, Double> prices = new HashMap<IngredientsType, Double>();
+	
+	Ingredients(){
+		prices.put(IngredientsType.ASPARAGUS, 10.50);
+		prices.put(IngredientsType.ANCHOES, 15.0);
+		prices.put(IngredientsType.BROCCOLI, 7.50);
+		prices.put(IngredientsType.MOZARELLA_CHEESE, 5.7);
+		prices.put(IngredientsType.GREEKCHEESE, 9.0);
+	}
 
-	public double getCostAditionalIngredient(IngredientsType ingredientsType) {
-		switch (ingredientsType) {
-		case ASPARAGUS:
-			return 1.1;
-		case ANCHOES:
-			return 2.1;
-		case BROCCOLI:
-			return 3.1;
-		case MOZARELLA_CHEESE:
-			return 3.0;
-		case GREEKCHEESE:
-			return 2.1;
-
-		default:
-			break;
+	public double getPrice() { 
+		return unitcostAditionalIngredient;			
+		/*if(prices.containsKey(ingredientsType)) {
+			unitcostAditionalIngredient = prices.get(ingredientsType);
+			return unitcostAditionalIngredient;
 		}
-
-		return 0.0;
-
+		else {
+			//loguear un error
+			return 0.0;
+		}*/
+	}
+	
+	public void updatePrice(IngredientsType ing, double newPrice) {
+		prices.put(ing, newPrice);		
 	}
 
 	public IngredientsType getIngredientsType() {
@@ -32,6 +39,13 @@ public class Ingredients {
 
 	public void setIngredientsType(IngredientsType ingredientsType) {
 		this.ingredientsType = ingredientsType;
+	}
+
+	public void setPrice() {
+		// TODO Auto-generated method stub
+		if(prices.containsKey(ingredientsType)) {
+			unitcostAditionalIngredient = prices.get(ingredientsType);			
+		}
 	}
 
 }
