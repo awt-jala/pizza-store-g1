@@ -5,19 +5,19 @@ import java.util.HashSet;
 public abstract class Pizza {
 	private PizzaTypes pizzaType;
 	
-	HashSet<Ingredients> mandatoryIngredients;
-	HashSet<Ingredients> optionalIngredients;
+	HashSet<IngredientsType> mandatoryIngredients;
+	HashSet<IngredientsType> optionalIngredients;
 
 	Pizza(PizzaTypes pizzaType) {
 		this.pizzaType = pizzaType;
-		optionalIngredients = new HashSet<Ingredients>();
-		optionalIngredients.add(Ingredients.ANCHOES);
-		optionalIngredients.add(Ingredients.OLIVE);
-		optionalIngredients.add(Ingredients.PINEAPPLE);
-		optionalIngredients.add(Ingredients.SPICY_SAUCE);
-		optionalIngredients.add(Ingredients.SALAME);
+		optionalIngredients = new HashSet<IngredientsType>();
+		optionalIngredients.add(IngredientsType.ANCHOES);
+		optionalIngredients.add(IngredientsType.OLIVE);
+		optionalIngredients.add(IngredientsType.PINEAPPLE);
+		optionalIngredients.add(IngredientsType.SPICY_SAUCE);
+		optionalIngredients.add(IngredientsType.SALAME);
 
-		mandatoryIngredients = new HashSet<Ingredients>();
+		mandatoryIngredients = new HashSet<IngredientsType>();
 	}
 
 	public void showIngredients() {
@@ -25,11 +25,11 @@ public abstract class Pizza {
 		System.out.println(optionalIngredients);
 	}
 
-	public void removeIngrediente(Ingredients ingredient) {
+	public void removeIngrediente(IngredientsType ingredient) {
 		optionalIngredients.remove(ingredient);
 	}
 
-	public void aditionIngrediente(Ingredients ingredient) {
+	public void aditionIngrediente(IngredientsType ingredient) {
 		optionalIngredients.add(ingredient);
 	}
 

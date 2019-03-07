@@ -1,19 +1,5 @@
 package main.java.p1;
 
-public enum Ingredients {
-	SPICY_SAUCE,
-	PINEAPPLE,
-	OLIVE,
-	TOMATO_SAUCE,
-	TOMATO_SLICES,
-	BROCCOLI,
-	ASPARAGUS,
-	HAM,
-	SALAME,
-	ANCHOES,
-	MOZARELLA_CHEESE,
-	PARMESAN_CHEESE,
-	PEPPERONI,
-	GREEKCHEESE,
-	
+public class Ingredients {
+
 }
