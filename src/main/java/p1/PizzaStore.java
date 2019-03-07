@@ -20,16 +20,21 @@ public class PizzaStore {
 
 	}
 
-	public Order createCustomOrder(PizzaTypes type, int quantity, ArrayList<IngredientsType> IngredientesARemover) {
+	public Order createCustomOrder(PizzaTypes type, int quantity, HashSet<Ingredients> aditionalingredients ) {
 		SimplePizzaFactory factory = new SimplePizzaFactory();
 		Pizza pizza = factory.create(type);
-
+		
+		
+		
+		
+		
+		/*
 		for (IngredientsType Ing : IngredientesARemover) {
 
 			pizza.optionalIngredients.remove(Ing);
 		}
 		pizza.showIngredients();
-
+		*/
 		Order orden = new Order(quantity, pizza);
 
 		return orden;

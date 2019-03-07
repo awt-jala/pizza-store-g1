@@ -1,5 +1,7 @@
 package main.java.p1;
 
+import java.util.HashSet;
+
 /**
  * This is a concrete class of superClass Pizza
  * 
@@ -7,16 +9,21 @@ package main.java.p1;
  * @version 1.0
  */
 public class CheesePizza extends Pizza {
+	//public double totalCost;
 
 	public CheesePizza() {
-		/**
-		 * Here is a constructor class Pizza
-		 */
 		super(PizzaTypes.CHEESE);
-		mandatoryIngredients.add(IngredientsType.MOZARELLA_CHEESE);
-		mandatoryIngredients.add(IngredientsType.TOMATO_SAUCE);
-		mandatoryIngredients.add(IngredientsType.TOMATO_SLICES);
+		PIZZA_COST = 10;
 
+	}
+
+	public double totalCost(HashSet<Ingredients> list) {
+		double sum = 0;
+		for (Ingredients ing : list) {
+			sum = sum + ing.getCostAditionalIngredient(ing.ingredientsType);
+		}
+
+		return PIZZA_COST + sum;
 	}
 
 }

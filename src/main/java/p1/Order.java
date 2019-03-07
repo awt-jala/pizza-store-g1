@@ -4,7 +4,7 @@ public class Order {
 
 	int quantity;
 	Pizza pizza;
-
+	Client client;
 	public Order(int quantity, Pizza pizza){
 		this.quantity=quantity;
 		this.pizza=pizza;	
