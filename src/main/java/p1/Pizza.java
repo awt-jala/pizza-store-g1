@@ -3,58 +3,61 @@ package main.java.p1;
 import java.util.HashSet;
 
 public abstract class Pizza {
-	private PizzaTypes pizzaType;
-	double PIZZA_COST;
+    private final PizzaTypes pizzaType;
+    double pizzaCost;
 
-	//HashSet<Ingredients> mandatoryIngredients;
-	HashSet<Ingredients> optionalIngredients;
+    // HashSet<Ingredients> mandatoryIngredients;
+    HashSet<Ingredients> optionalIngredients;
 
-	Pizza(PizzaTypes pizzaType) {
-		this.pizzaType = pizzaType;
-		optionalIngredients = new HashSet<Ingredients>();
-		/*
-		 * optionalIngredients.add(IngredientsType.ANCHOES);
-		 * optionalIngredients.add(IngredientsType.OLIVE);
-		 * optionalIngredients.add(IngredientsType.PINEAPPLE);
-		 * optionalIngredients.add(IngredientsType.SPICY_SAUCE);
-		 * optionalIngredients.add(IngredientsType.SALAME);
-		 */
-		//mandatoryIngredients = new HashSet<Ingredients>();
-	}
+    Pizza(final PizzaTypes pizzaType) {
+        this.pizzaType = pizzaType;
+        optionalIngredients = new HashSet<Ingredients>();
+        /*
+         * optionalIngredients.add(IngredientsType.ANCHOES);
+         * optionalIngredients.add(IngredientsType.OLIVE);
+         * optionalIngredients.add(IngredientsType.PINEAPPLE);
+         * optionalIngredients.add(IngredientsType.SPICY_SAUCE);
+         * optionalIngredients.add(IngredientsType.SALAME);
+         */
+        // mandatoryIngredients = new HashSet<Ingredients>();
+    }
 
-	public void showIngredients() {
-		//System.out.println(mandatoryIngredients);
-		System.out.println(optionalIngredients);
-	}
+    /**
+     * Show Ingredients
+     */
+    public void showIngredients() {
+        // System.out.println(mandatoryIngredients);
+        System.out.println(optionalIngredients);
+    }
 
-	public void removeIngrediente(Ingredients ingredient) {
-		optionalIngredients.remove(ingredient);
-	}
+    public final void removeIngrediente(final Ingredients ingredient) {
+        optionalIngredients.remove(ingredient);
+    }
 
-	public void aditionIngrediente(Ingredients ingredient) {
-		optionalIngredients.add(ingredient);
-	}
+    public final void aditionIngrediente(final Ingredients ingredient) {
+        optionalIngredients.add(ingredient);
+    }
 
-	public String PrintType2() {
-		String type = "PIZZA " + pizzaType;
-		return type;
-	}
+    public String PrintType2() {
+        final String type = "PIZZA " + pizzaType;
+        return type;
+    }
 
-	public double getPizzaCost() {
-		return PIZZA_COST;
-	}
+    public double getPizzaCost() {
+        return pizzaCost;
+    }
 
-	public void setPizzaCost(double pizzaCost) {
-		this.PIZZA_COST = pizzaCost;
-	}
-	
-	public double totalCost(HashSet<Ingredients> list) {
-		double sum = 0;
-		for (Ingredients ing : list) {
-			sum = sum + ing.getPrice();
-		}
+    public void setPizzaCost(final double pizzaCost) {
+        this.pizzaCost = pizzaCost;
+    }
 
-		return PIZZA_COST + sum;
-	}
-	
+    public double totalCost(final HashSet<Ingredients> list) {
+        double sum = 0;
+        for (final Ingredients ing : list) {
+            sum = sum + ing.getPrice();
+        }
+
+        return pizzaCost + sum;
+    }
+
 }
