@@ -37,4 +37,28 @@ public class CheesePizza extends Pizza {
         return pizzaCost + sum;
     }
 
+	@Override
+	void prepare() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	void bake() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	void cut() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	void box() {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

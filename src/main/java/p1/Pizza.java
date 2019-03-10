@@ -24,7 +24,14 @@ public abstract class Pizza {
 
     /**
      * Show Ingredients
+     * @return 
      */
+    
+    abstract void prepare();
+    abstract void bake();
+    abstract void cut();
+    abstract void box();
+    
     public void showIngredients() {
         // System.out.println(mandatoryIngredients);
         System.out.println(optionalIngredients);
