@@ -21,7 +21,7 @@ public class MainDeTesteo {
 		 * factory.create(PizzaTypes.VEGGIE);
 		 */
 
-		pizza1.showIngredients();
+		//pizza1.showIngredients();
 		PizzaStore sucursal1 = new PizzaStore();
 		// Order o1=sucursal1.createOrder(PizzaTypes.GREEK, 1);
 		// sucursal1.addToOrderlist(o1);
@@ -41,12 +41,12 @@ public class MainDeTesteo {
 		 */
 
 		Ingredients i = new Ingredients();
-		i.setIngredientsType(IngredientsType.ANCHOES);
+		i.setIngredientsType(IngredientType.ANCHOES);
 		i.setPrice();
 		
 		System.out.println("precio anchoas: " + i.getPrice());
 		Ingredients i2 = new Ingredients();
-		i2.setIngredientsType(IngredientsType.ASPARAGUS);
+		i2.setIngredientsType(IngredientType.ASPARAGUS);
 		//i2.updatePrice(IngredientsType.ASPARAGUS, 100.0);
 		i2.setPrice();
 		
@@ -63,6 +63,18 @@ public class MainDeTesteo {
 		
 		System.out.println(lista);
 		System.out.println(pizza1.totalCost(lista));
+		
+		
+		PizzafactoryBranchA factoryA = new PizzafactoryBranchA();
+		Pizza pizzaA = factoryA.createPizza(PizzaTypes.CHEESE);
+		//pizzaA.ingredientsList;
+		pizzaA.showIngredients();
+		pizzaA.aditionIngrediente(i);
+		pizzaA.showIngredients();
+		//pizzaA.removeIngrediente(i);
+		//pizzaA.showIngredients();
+		System.out.println(pizzaA.totalCost2());
+	
 	}
 	
 

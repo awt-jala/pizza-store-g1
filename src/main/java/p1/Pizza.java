@@ -3,68 +3,76 @@ package main.java.p1;
 import java.util.HashSet;
 
 public abstract class Pizza {
-    private final PizzaTypes pizzaType;
-    double pizzaCost;
+	private final PizzaTypes pizzaType;
+	double pizzaCost;
 
-    // HashSet<Ingredients> mandatoryIngredients;
-    HashSet<Ingredients> optionalIngredients;
+	HashSet<Ingredients> ingredientsList = new HashSet<Ingredients>();
 
-    Pizza(final PizzaTypes pizzaType) {
-        this.pizzaType = pizzaType;
-        optionalIngredients = new HashSet<Ingredients>();
-        /*
-         * optionalIngredients.add(IngredientsType.ANCHOES);
-         * optionalIngredients.add(IngredientsType.OLIVE);
-         * optionalIngredients.add(IngredientsType.PINEAPPLE);
-         * optionalIngredients.add(IngredientsType.SPICY_SAUCE);
-         * optionalIngredients.add(IngredientsType.SALAME);
-         */
-        // mandatoryIngredients = new HashSet<Ingredients>();
-    }
+	Pizza(final PizzaTypes pizzaType) {
+		this.pizzaType = pizzaType;
+		// this.ingredientsList = new HashSet<Ingredients>();
 
-    /**
-     * Show Ingredients
-     * @return 
-     */
-    
-    abstract void prepare();
-    abstract void bake();
-    abstract void cut();
-    abstract void box();
-    
-    public void showIngredients() {
-        // System.out.println(mandatoryIngredients);
-        System.out.println(optionalIngredients);
-    }
+	}
 
-    public final void removeIngrediente(final Ingredients ingredient) {
-        optionalIngredients.remove(ingredient);
-    }
+	abstract void prepare();
 
-    public final void aditionIngrediente(final Ingredients ingredient) {
-        optionalIngredients.add(ingredient);
-    }
+	abstract void bake();
 
-    public String PrintType2() {
-        final String type = "PIZZA " + pizzaType;
-        return type;
-    }
+	abstract void cut();
 
-    public double getPizzaCost() {
-        return pizzaCost;
-    }
+	abstract void box();
 
-    public void setPizzaCost(final double pizzaCost) {
-        this.pizzaCost = pizzaCost;
-    }
+	public HashSet<Ingredients> getIngredientsList() {
+		return ingredientsList;
+	}
 
-    public double totalCost(final HashSet<Ingredients> list) {
-        double sum = 0;
-        for (final Ingredients ing : list) {
-            sum = sum + ing.getPrice();
-        }
+	public void setIngredientsList(HashSet<Ingredients> ingredientsList) {
+		this.ingredientsList = ingredientsList;
+	}
 
-        return pizzaCost + sum;
-    }
+	public void showIngredients() {
+		for (Ingredients ing : ingredientsList)
+			// System.out.println(mandatoryIngredients);
+			System.out.println(ing.getIngredientsType());
+	}
 
+	public final void removeIngrediente(Ingredients ingredient) {
+		ingredientsList.remove(ingredient);
+	}
+
+	public final void aditionIngrediente(Ingredients ingredient) {
+		ingredientsList.add(ingredient);
+	}
+
+	public String PrintType2() {
+		final String type = "PIZZA " + pizzaType;
+		return type;
+	}
+
+	public double getPizzaCost() {
+		return pizzaCost;
+	}
+
+	public void setPizzaCost(final double pizzaCost) {
+		this.pizzaCost = pizzaCost;
+	}
+
+	public double totalCost(final HashSet<Ingredients> list) {
+		double sum = 0;
+		for (final Ingredients ing : list) {
+			sum = sum + ing.getPrice();
+		}
+
+		return pizzaCost + sum;
+	}
+
+	public double totalCost2() {
+
+		double sum = 0;
+		for (final Ingredients ing : ingredientsList) {
+			sum = sum + ing.getPrice();
+		}
+
+		return pizzaCost + sum;
+	}
 }

@@ -2,7 +2,7 @@ package main.java.p1;
 
 public abstract class AbstractFactory {
 
-	  public Pizza orderPizza(PizzaTypes pizzaType) {
+	  /*public Pizza orderPizza(PizzaTypes pizzaType) {
 	      Pizza pizza;
 	     pizza = createPizza(PizzaTypes type);
 	      pizza.prepare();
@@ -11,9 +11,9 @@ public abstract class AbstractFactory {
 	      pizza.box();
 	      return pizza;
 	  
-	  }
+	  }*/
 
 	protected abstract Pizza createPizza(PizzaTypes pizzaType);
 
-	protected abstract Pizza createLasagana(LasagnaType lasagnaType);
+	protected abstract Lasagna createLasagana(LasagnaType lasagnaType);
 }

@@ -27,15 +27,7 @@ public class CheesePizza extends Pizza {
      *
      * @return double
      */
-    @Override
-    public double totalCost(final HashSet<Ingredients> list) {
-        double sum = 0;
-        for (final Ingredients ing : list) {
-            sum = sum + ing.getPrice();
-        }
-
-        return pizzaCost + sum;
-    }
+    
 
 	@Override
 	void prepare() {

@@ -5,16 +5,16 @@ import java.util.Map;
 
 public class Ingredients {
 
-	IngredientsType ingredientsType;
+	IngredientType ingredientsType;
 	double unitcostAditionalIngredient = 0;
-	Map<IngredientsType, Double> prices = new HashMap<IngredientsType, Double>();
+	Map<IngredientType, Double> prices = new HashMap<IngredientType, Double>();
 	
 	Ingredients(){
-		prices.put(IngredientsType.ASPARAGUS, 10.50);
-		prices.put(IngredientsType.ANCHOES, 15.0);
-		prices.put(IngredientsType.BROCCOLI, 7.50);
-		prices.put(IngredientsType.MOZARELLA_CHEESE, 5.7);
-		prices.put(IngredientsType.GREEKCHEESE, 9.0);
+		prices.put(IngredientType.ASPARAGUS, 10.50);
+		prices.put(IngredientType.ANCHOES, 15.0);
+		prices.put(IngredientType.BROCCOLI, 7.50);
+		prices.put(IngredientType.MOZARELLA_CHEESE, 5.7);
+		
 	}
 
 	public double getPrice() { 
@@ -29,15 +29,15 @@ public class Ingredients {
 		}*/
 	}
 	
-	public void updatePrice(IngredientsType ing, double newPrice) {
+	public void updatePrice(IngredientType ing, double newPrice) {
 		prices.put(ing, newPrice);		
 	}
 
-	public IngredientsType getIngredientsType() {
+	public IngredientType getIngredientsType() {
 		return ingredientsType;
 	}
 
-	public void setIngredientsType(IngredientsType ingredientsType) {
+	public void setIngredientsType(IngredientType ingredientsType) {
 		this.ingredientsType = ingredientsType;
 	}
 

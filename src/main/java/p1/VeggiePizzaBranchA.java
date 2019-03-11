@@ -1,19 +1,12 @@
 package main.java.p1;
 
-public class CheesePizzaBranchB extends Pizza {
-	private static final double PIZZA_COST_BASE = 10;
-	Ingredients ing1;
-	Ingredients ing2;
-	Ingredients ing3;
-	
-	public CheesePizzaBranchB() {
-		super(PizzaTypes.CHEESE);
-		pizzaCost = PIZZA_COST_BASE;
+public class VeggiePizzaBranchA extends Pizza {
 
-	
+	VeggiePizzaBranchA() {
+		super(PizzaTypes.VEGGIE);
+		// TODO Auto-generated constructor stub
 	}
-	
-	
+
 	@Override
 	void prepare() {
 		// TODO Auto-generated method stub
