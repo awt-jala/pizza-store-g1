@@ -1,16 +1,49 @@
 package main.java.p1;
 
-public abstract class Lasagna {
+import java.util.HashSet;
 
-	private final LasagnaType lasagnaType;
+public abstract class Lasagna extends Product {
 
-	Lasagna(LasagnaType lasagnaType) {
-		this.lasagnaType = lasagnaType;
-	}
+    private final LasagnaType lasagnaType;
+    double lasagnaCost;
+    HashSet<IngredientsLasagna> ingredientsList = new HashSet<IngredientsLasagna>();
 
-	abstract void prepare();
+    Lasagna(final LasagnaType lasagnaType) {
+        this.lasagnaType = lasagnaType;
+    }
 
-	abstract void bake();
+    public String PrintType2() {
+        final String type = "LASAGNA " + lasagnaType;
+        return type;
+    }
 
-	abstract void deliver();
+    public void showIngredients() {
+        for (final Ingredients ing : ingredientsList)
+            // System.out.println(mandatoryIngredients);
+            System.out.println(ing.getIngredientsType());
+    }
+
+    public final void removeIngrediente(final Ingredients ingredient) {
+        ingredientsList.remove(ingredient);
+    }
+
+    public final void aditionIngrediente(final Ingredients ingredient) {
+        ingredientsList.add(ingredient);
+    }
+
+    public double getTotalCostIngredientsList() {
+
+        double sum = 0;
+        for (final Ingredients ing : ingredientsList) {
+            sum = sum + ing.getPrice();
+        }
+
+        return lasagnaCost + sum;
+    }
+
+    /*
+     *
+     * abstract void prepare(); abstract void bake(); abstract void deliver();
+     */
+
 }
