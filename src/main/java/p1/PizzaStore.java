@@ -13,7 +13,7 @@ public class PizzaStore {
 
 	public Order createOrder(PizzaTypes type, int quantity) {
 		SimplePizzaFactory factory = new SimplePizzaFactory();
-		Pizza pizza = factory.create(type);
+		AbstractPizza pizza = factory.create(type);
 		Order orden = new Order(quantity, pizza);
 
 		return orden;
@@ -22,7 +22,7 @@ public class PizzaStore {
 
 	public Order createCustomOrder(PizzaTypes type, int quantity, HashSet<Ingredients> aditionalingredients ) {
 		SimplePizzaFactory factory = new SimplePizzaFactory();
-		Pizza pizza = factory.create(type);
+		AbstractPizza pizza = factory.create(type);
 		
 		
 		

@@ -1,6 +1,6 @@
 package main.java.p1;
 
-public class VeggiePizzaBranchB extends Pizza {
+public class VeggiePizzaBranchB extends AbstractPizza {
     private static final double PIZZA_COST_BASE = 10;
     Ingredients thin_dough;
     Ingredients plum_tomato_sauce;
@@ -13,30 +13,14 @@ public class VeggiePizzaBranchB extends Pizza {
     VeggiePizzaBranchB() {
         super(PizzaTypes.VEGGIE);
         pizzaCost = PIZZA_COST_BASE;
-        thin_dough = new Ingredients();
-        thin_dough.setIngredientsType(IngredientType.THIN_DOUGH);
-        thin_dough.setPrice();
-        parmesan_cheese = new Ingredients();
-        parmesan_cheese.setIngredientsType(IngredientType.PARMESAN_CHEESE);
-        parmesan_cheese.setPrice();
-        broccoli = new Ingredients();
-        broccoli.setIngredientsType(IngredientType.BROCCOLI);
-        broccoli.setPrice();
-        plum_tomato_sauce = new Ingredients();
-        plum_tomato_sauce.setIngredientsType(IngredientType.PLUM_TOMATO_SAUCE);
-        plum_tomato_sauce.setPrice();
-        olive = new Ingredients();
-        olive.setIngredientsType(IngredientType.OLIVE);
-        olive.setPrice();
-        asparagus = new Ingredients();
-        asparagus.setIngredientsType(IngredientType.ASPARAGUS);
-        asparagus.setPrice();
-        tomato_slices = new Ingredients();
-        tomato_slices.setIngredientsType(IngredientType.TOMATO_SLICES);
-        tomato_slices.setPrice();
-        pineapple = new Ingredients();
-        pineapple.setIngredientsType(IngredientType.PINEAPPLE);
-        pineapple.setPrice();
+        thin_dough = new Ingredients(IngredientType.THIN_DOUGH);
+        parmesan_cheese = new Ingredients(IngredientType.PARMESAN_CHEESE);
+        broccoli = new Ingredients(IngredientType.BROCCOLI);
+        plum_tomato_sauce = new Ingredients(IngredientType.PLUM_TOMATO_SAUCE);
+        olive = new Ingredients(IngredientType.OLIVE);
+        asparagus = new Ingredients(IngredientType.ASPARAGUS);
+        tomato_slices = new Ingredients(IngredientType.TOMATO_SLICES);
+        pineapple = new Ingredients(IngredientType.PINEAPPLE);
 
         ingredientsList.add(thin_dough);
         ingredientsList.add(parmesan_cheese);

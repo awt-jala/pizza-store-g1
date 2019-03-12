@@ -2,13 +2,13 @@ package main.java.p1;
 
 import java.util.HashSet;
 
-public abstract class Pizza extends Product {
+public abstract class AbstractPizza extends Product {
     private final PizzaTypes pizzaType;
     double pizzaCost;
 
     HashSet<Ingredients> ingredientsList = new HashSet<Ingredients>();
 
-    Pizza(final PizzaTypes pizzaType) {
+    AbstractPizza(final PizzaTypes pizzaType) {
         this.pizzaType = pizzaType;
         // this.ingredientsList = new HashSet<Ingredients>();
 

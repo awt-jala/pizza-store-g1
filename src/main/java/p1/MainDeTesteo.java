@@ -14,7 +14,7 @@ public class MainDeTesteo {
          */
 
         final SimplePizzaFactory factory = new SimplePizzaFactory();
-        final Pizza pizza1 = factory.create(PizzaTypes.CHEESE);
+        final AbstractPizza pizza1 = factory.create(PizzaTypes.CHEESE);
         /*
          * Pizza pizza2 = factory.create(PizzaTypes.GREEK); Pizza pizza3 =
          * factory.create(PizzaTypes.PEPPERONI); Pizza pizza4 =
@@ -66,7 +66,7 @@ public class MainDeTesteo {
 
         System.out.println("---------------------------------------");
         final PizzafactoryBranchA factoryA = new PizzafactoryBranchA();
-        final Pizza pizzaA = factoryA.createPizza(PizzaTypes.CHEESE);
+        final AbstractPizza pizzaA = factoryA.createPizza(PizzaTypes.CHEESE);
         // pizzaA.ingredientsList;
         pizzaA.showIngredients();
         // pizzaA.aditionIngrediente(i2);

@@ -3,9 +3,9 @@ package main.java.p1;
 public class Order {
 
 	int quantity;
-	Pizza pizza;
+	AbstractPizza pizza;
 	Client client;
-	public Order(int quantity, Pizza pizza){
+	public Order(int quantity, AbstractPizza pizza){
 		this.quantity=quantity;
 		this.pizza=pizza;	
 		}
@@ -19,11 +19,11 @@ public class Order {
 		this.quantity = quantity;
 	}
 
-	public Pizza getPizza() {
+	public AbstractPizza getPizza() {
 		return pizza;
 	}
 
-	public void setPizza(Pizza pizza) {
+	public void setPizza(AbstractPizza pizza) {
 		this.pizza = pizza;
 	}
 

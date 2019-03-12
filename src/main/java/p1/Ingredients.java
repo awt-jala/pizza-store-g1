@@ -9,8 +9,14 @@ public class Ingredients {
     double unitcostIngredient = 0;
     Map<IngredientType, Double> prices = new HashMap<IngredientType, Double>();
 
-    Ingredients() {
-        prices.put(IngredientType.THICK_DOUGH, 15.00);
+    Ingredients(IngredientType ingredientsType) {
+        setPriceForAllIngredientes();
+        setIngredientsType(ingredientsType);
+        setPrice();
+    }
+
+    private void setPriceForAllIngredientes() {
+    	prices.put(IngredientType.THICK_DOUGH, 15.00);
         prices.put(IngredientType.THIN_DOUGH, 10.0);
         prices.put(IngredientType.PLUM_TOMATO_SAUCE, 7.50);
         prices.put(IngredientType.MARINARA_SAUCE, 5.7);
@@ -29,11 +35,10 @@ public class Ingredients {
         prices.put(IngredientType.HAM, 5.50);
         prices.put(IngredientType.SALAME, 8.0);
         prices.put(IngredientType.PEPPERONI, 8.50);
-        prices.put(IngredientType.SPICY_SAUCE, 3.0);
+        prices.put(IngredientType.SPICY_SAUCE, 3.0);		
+	}
 
-    }
-
-    public double getPrice() {
+	public double getPrice() {
         return unitcostIngredient;
         /*
          * if(prices.containsKey(ingredientsType)) { unitcostAditionalIngredient

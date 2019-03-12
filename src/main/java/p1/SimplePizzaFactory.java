@@ -2,7 +2,7 @@ package main.java.p1;
 
 public class SimplePizzaFactory {
 
-	public Pizza create(PizzaTypes pizzaTypes) {
+	public AbstractPizza create(PizzaTypes pizzaTypes) {
 		switch (pizzaTypes) {
 		case CHEESE:return new CheesePizza(); 
 		case GREEK:return new GreekPizza();

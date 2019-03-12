@@ -13,7 +13,7 @@ public abstract class AbstractFactory {
 	  
 	  }*/
 
-	protected abstract Pizza createPizza(PizzaTypes pizzaType);
+	protected abstract AbstractPizza createPizza(PizzaTypes pizzaType);
 
 	protected abstract Lasagna createLasagana(LasagnaType lasagnaType);
 }

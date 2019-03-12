@@ -1,6 +1,6 @@
 package main.java.p1;
 
-public class PepperoniPizzaBranchA extends Pizza {
+public class PepperoniPizzaBranchA extends AbstractPizza {
     private static final double PIZZA_COST_BASE = 10;
     Ingredients thin_dough;
     Ingredients plum_tomato_sauce;
@@ -11,21 +11,11 @@ public class PepperoniPizzaBranchA extends Pizza {
     PepperoniPizzaBranchA() {
         super(PizzaTypes.PEPPERONI);
         pizzaCost = PIZZA_COST_BASE;
-        thin_dough = new Ingredients();
-        thin_dough.setIngredientsType(IngredientType.THIN_DOUGH);
-        thin_dough.setPrice();
-        mozarella_cheese = new Ingredients();
-        mozarella_cheese.setIngredientsType(IngredientType.MOZARELLA_CHEESE);
-        mozarella_cheese.setPrice();
-        parmesan_cheese = new Ingredients();
-        parmesan_cheese.setIngredientsType(IngredientType.PARMESAN_CHEESE);
-        parmesan_cheese.setPrice();
-        plum_tomato_sauce = new Ingredients();
-        plum_tomato_sauce.setIngredientsType(IngredientType.PLUM_TOMATO_SAUCE);
-        plum_tomato_sauce.setPrice();
-        pepperoni = new Ingredients();
-        pepperoni.setIngredientsType(IngredientType.PEPPERONI);
-        pepperoni.setPrice();
+        thin_dough = new Ingredients(IngredientType.THIN_DOUGH);
+        mozarella_cheese = new Ingredients(IngredientType.MOZARELLA_CHEESE);
+        parmesan_cheese = new Ingredients(IngredientType.PARMESAN_CHEESE);
+        plum_tomato_sauce = new Ingredients(IngredientType.PLUM_TOMATO_SAUCE);
+        pepperoni = new Ingredients(IngredientType.PEPPERONI);
 
         ingredientsList.add(thin_dough);
         ingredientsList.add(mozarella_cheese);
