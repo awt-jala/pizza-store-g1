@@ -41,25 +41,28 @@ public class MainDeTesteo {
          * pizza4.PrintType2();
          */
 
-        final Ingredients i = new Ingredients();
-        i.setIngredientsType(IngredientType.ANCHOES);
-        i.setPrice();
+        final Ingredients anchoeIngredient = new Ingredients(
+                IngredientType.ANCHOES);
+        // i.setIngredientsType(IngredientType.ANCHOES);
+        // i.setPrice();
 
-        System.out.println("precio anchoas: " + i.getPrice());
-        final Ingredients i2 = new Ingredients();
-        i2.setIngredientsType(IngredientType.REGGIANO_CHEESE);
+        // System.out.println("precio anchoas: " + i.getPrice());
+        final Ingredients reggianoIngredient = new Ingredients(
+                IngredientType.REGGIANO_CHEESE);
+        // i2.setIngredientsType(IngredientType.REGGIANO_CHEESE);
         // i2.updatePrice(IngredientsType.ASPARAGUS, 100.0);
-        i2.setPrice();
+        // i2.setPrice();
 
-        System.out.println("precio Esparragos: " + i2.getPrice());
+        // System.out.println("precio Esparragos: " + i2.getPrice());
         double suma = 0;
 
-        suma = i.getPrice() + i2.getPrice();
+        suma = anchoeIngredient.getPrice() + reggianoIngredient.getPrice();
+        // suma = i.getPrice() + i2.getPrice();
         System.out.println("El total es : " + suma);
 
         final HashSet<Ingredients> lista = new HashSet<Ingredients>();
-        lista.add(i);
-        lista.add(i2);
+        lista.add(anchoeIngredient);
+        lista.add(reggianoIngredient);
 
         System.out.println(lista);
         System.out.println(pizza1.totalCost(lista));
@@ -69,10 +72,10 @@ public class MainDeTesteo {
         final AbstractPizza pizzaA = factoryA.createPizza(PizzaTypes.CHEESE);
         // pizzaA.ingredientsList;
         pizzaA.showIngredients();
-        // pizzaA.aditionIngrediente(i2);
-        // pizzaA.showIngredients();
-        pizzaA.removeIngrediente(i2);
+        pizzaA.aditionIngrediente(anchoeIngredient);
         pizzaA.showIngredients();
+        // pizzaA.removeIngrediente();
+        // pizzaA.showIngredients();
         System.out.println(pizzaA.getTotalCostIngredientsList());
 
     }
