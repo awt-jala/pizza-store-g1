@@ -14,13 +14,7 @@ public abstract class Pizza extends Product {
 
     }
 
-    abstract void prepare();
-
-    abstract void bake();
-
-    abstract void cut();
-
-    abstract void box();
+    
 
     public HashSet<Ingredients> getIngredientsList() {
         return ingredientsList;

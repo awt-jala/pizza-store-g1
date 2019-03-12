@@ -27,30 +27,6 @@ public class CheesePizza extends Pizza {
      *
      * @return double
      */
-    
-
-	@Override
-	void prepare() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	void bake() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	void cut() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	void box() {
-		// TODO Auto-generated method stub
-		
-	}
+   
 
 }
