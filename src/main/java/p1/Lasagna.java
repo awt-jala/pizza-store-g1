@@ -12,7 +12,7 @@ public abstract class Lasagna extends Product {
         this.lasagnaType = lasagnaType;
     }
 
-    public String PrintType2() {
+    public String printType() {
         final String type = "LASAGNA " + lasagnaType;
         return type;
     }

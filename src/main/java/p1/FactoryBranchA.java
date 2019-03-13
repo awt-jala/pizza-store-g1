@@ -1,6 +1,6 @@
 package main.java.p1;
 
-public class PizzafactoryBranchA extends AbstractFactory {
+public class FactoryBranchA extends AbstractFactory {
 
 	@Override
 	public AbstractPizza createPizza(PizzaTypes pizzaType) {
@@ -15,7 +15,7 @@ public class PizzafactoryBranchA extends AbstractFactory {
 	}
 
 	@Override
-	protected Lasagna createLasagana(LasagnaType lasagnaType) {
+	public Lasagna createLasagana(LasagnaType lasagnaType) {
 		switch (lasagnaType) {
 		case STANDAR:return new LasagnaBranchA(); 
 		default: break;

@@ -10,7 +10,7 @@ public class LasagnaBranchB extends Lasagna {
     IngredientsLasagna ing6;
     IngredientsLasagna ing7;
 
-    LasagnaBranchB() {
+    public LasagnaBranchB() {
         super(LasagnaType.STANDAR);
         lasagnaCost = LASAGNA_COST_BASE;
 

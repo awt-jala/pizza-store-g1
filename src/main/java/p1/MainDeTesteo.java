@@ -33,7 +33,7 @@ public class MainDeTesteo {
 
         for (final Order o : sucursal1.orderList) {
             System.out.println(o.getQuantity());
-            System.out.println(o.getPizza().PrintType2());
+            System.out.println(o.getPizza().printType());
         }
 
         /*
@@ -68,7 +68,7 @@ public class MainDeTesteo {
         System.out.println(pizza1.totalCost(lista));
 
         System.out.println("---------------------------------------");
-        final PizzafactoryBranchA factoryA = new PizzafactoryBranchA();
+        final FactoryBranchA factoryA = new FactoryBranchA();
         final AbstractPizza pizzaA = factoryA.createPizza(PizzaTypes.CHEESE);
         // pizzaA.ingredientsList;
         pizzaA.showIngredients();

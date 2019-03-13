@@ -40,7 +40,7 @@ public abstract class AbstractPizza extends Product {
         ingredientsList.add(ingredient);
     }
 
-    public String PrintType2() {
+    public String printType() {
         final String type = "PIZZA " + pizzaType;
         return type;
     }

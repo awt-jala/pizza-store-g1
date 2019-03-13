@@ -3,7 +3,7 @@ package main.java.p1;
 public class Mani {
 
 	public static void main(String[] args) {
-		final PizzafactoryBranchA factoryA = new PizzafactoryBranchA();	
+		final FactoryBranchA factoryA = new FactoryBranchA();	
 		final AbstractPizza pizzaA = factoryA.createPizza(PizzaTypes.CHEESE);
 		final Ingredients anchoeIngredient = new Ingredients(
                 IngredientType.ANCHOES); 
