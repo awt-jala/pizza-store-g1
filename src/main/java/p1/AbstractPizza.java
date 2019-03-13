@@ -12,10 +12,8 @@ public abstract class AbstractPizza extends Product {
         this.pizzaType = pizzaType;
 
         // this.ingredientsList = new HashSet<Ingredients>();
- 
-    }
 
-    
+    }
 
     public HashSet<Ingredients> getIngredientsList() {
         return ingredientsList;
@@ -32,14 +30,24 @@ public abstract class AbstractPizza extends Product {
     }
 
     public final void removeIngrediente(final Ingredients ingredient) {
-        //ingredientsList.remove(ingredient);
-    	ingredientsList.remove(ingredient);
+        // ingredientsList.remove(ingredient);
+        ingredientsList.remove(ingredient);
+    }
+
+    public final void removeIngrediente(final IngredientType type) {
+        for (final Ingredients ing : ingredientsList) {
+            if (ing.getIngredientsType() == type) {
+                ingredientsList.remove(ing);
+            } //
+              // ingredientsList.remove(ingredient);
+        }
     }
 
     public final void aditionIngrediente(final Ingredients ingredient) {
         ingredientsList.add(ingredient);
     }
 
+    @Override
     public String printType() {
         final String type = "PIZZA " + pizzaType;
         return type;
@@ -62,6 +70,7 @@ public abstract class AbstractPizza extends Product {
         return pizzaCost + sum;
     }
 
+    @Override
     public double getTotalCostIngredientsList() {
 
         double sum = 0;
