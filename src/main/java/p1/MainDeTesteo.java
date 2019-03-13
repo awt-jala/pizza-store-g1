@@ -76,7 +76,7 @@ public class MainDeTesteo {
         pizzaA.showIngredients();
         // pizzaA.removeIngrediente();
         // pizzaA.showIngredients();
-        System.out.println(pizzaA.getTotalCostIngredientsList());
+        //System.out.println(pizzaA.getTotalCostIngredientsList());
 
     }
 
