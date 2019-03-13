@@ -10,8 +10,9 @@ public abstract class AbstractPizza extends Product {
 
     AbstractPizza(final PizzaTypes pizzaType) {
         this.pizzaType = pizzaType;
-        // this.ingredientsList = new HashSet<Ingredients>();
 
+        // this.ingredientsList = new HashSet<Ingredients>();
+ 
     }
 
     
@@ -31,7 +32,8 @@ public abstract class AbstractPizza extends Product {
     }
 
     public final void removeIngrediente(final Ingredients ingredient) {
-        ingredientsList.remove(ingredient);
+        //ingredientsList.remove(ingredient);
+    	ingredientsList.remove(ingredient);
     }
 
     public final void aditionIngrediente(final Ingredients ingredient) {

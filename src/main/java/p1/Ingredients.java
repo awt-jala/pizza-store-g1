@@ -18,7 +18,7 @@ public class Ingredients {
 
     Map<IngredientType, Double> prices = new HashMap<IngredientType, Double>();
 
-    Ingredients(final IngredientType ingredientsType) {
+    public Ingredients(final IngredientType ingredientsType) {
         setPriceForAllIngredientes();
         setIngredientsType(ingredientsType);
         setPrice();

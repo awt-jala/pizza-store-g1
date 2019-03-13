@@ -1,14 +1,16 @@
 package main.java.p1;
 
+import java.util.HashSet;
+
 public class CheesePizzaBranchA extends AbstractPizza {
     private static final double PIZZA_COST_BASE = 10;
     Ingredients thick_dough;
     Ingredients plum_tomato_sauce;
     Ingredients mozarella_cheese;
     Ingredients reggiano_cheese;
-    
+    //HashSet<Ingredients> ingredientsList;
 
-    CheesePizzaBranchA() {
+    public CheesePizzaBranchA() {
         super(PizzaTypes.CHEESE);
         pizzaCost = PIZZA_COST_BASE;
         thick_dough = new Ingredients(IngredientType.THICK_DOUGH);
@@ -19,6 +21,7 @@ public class CheesePizzaBranchA extends AbstractPizza {
         ingredientsList.add(mozarella_cheese);
         ingredientsList.add(reggiano_cheese);
         ingredientsList.add(plum_tomato_sauce);
+        //ingredientsList.remove(mozarella_cheese);
     }  
     
 }

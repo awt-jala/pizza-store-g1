@@ -3,7 +3,7 @@ package main.java.p1;
 public class PizzafactoryBranchA extends AbstractFactory {
 
 	@Override
-	protected AbstractPizza createPizza(PizzaTypes pizzaType) {
+	public AbstractPizza createPizza(PizzaTypes pizzaType) {
 		switch (pizzaType) {
 		case CHEESE:return new CheesePizzaBranchA(); 
 		case GREEK:return new GreekPizzaBranchA();
