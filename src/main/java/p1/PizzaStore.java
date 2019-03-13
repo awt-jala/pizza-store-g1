@@ -8,9 +8,9 @@ public class PizzaStore {
 
 	public ArrayList<Order> orderList = new ArrayList<Order>();
 
-	public void showMenu() {
-	}
+	
 
+	
 	public Order createOrder(PizzaTypes type, int quantity) {
 		SimplePizzaFactory factory = new SimplePizzaFactory();
 		AbstractPizza pizza = factory.create(type);

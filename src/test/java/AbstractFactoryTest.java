@@ -16,13 +16,14 @@ import main.java.p1.LasagnaBranchA;
 import main.java.p1.LasagnaBranchB;
 import main.java.p1.LasagnaType;
 import main.java.p1.PizzaTypes;
+import main.java.p1.Product;
 
 class AbstractFactoryTest {
 
 	@Test
 	void test_Create_Concrete_pizzaA() {
 		final FactoryBranchA factoryA = new FactoryBranchA();
-		final AbstractPizza pizzaA = factoryA.createPizza(PizzaTypes.CHEESE);
+		final Product pizzaA = factoryA.createPizza(PizzaTypes.CHEESE);
 		CheesePizzaBranchA objetc = new CheesePizzaBranchA();
 		assertEquals(pizzaA.printType(), objetc.printType());
 	}
@@ -38,7 +39,7 @@ class AbstractFactoryTest {
 	@Test
 	void test_Create_Concrete_LasagnaA() {
 		final FactoryBranchA factoryA = new FactoryBranchA();
-		final Lasagna lasagna = factoryA.createLasagana(LasagnaType.STANDAR);
+		final Product lasagna = factoryA.createLasagana(LasagnaType.STANDAR);
 		LasagnaBranchA object = new LasagnaBranchA();
 		assertEquals(lasagna.printType(), object.printType());
 	}

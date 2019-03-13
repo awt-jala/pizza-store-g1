@@ -3,11 +3,24 @@ package main.java.p1;
 public class Order {
 
 	int quantity;
-	AbstractPizza pizza;
-	Client client;
-	public Order(int quantity, AbstractPizza pizza){
+	Product product;
+	double orderCost;
+	//AbstractPizza pizza;
+	
+	public double getOrderCost() {
+		return orderCost;
+	}
+
+
+	public void setOrderCost(double orderCost) {
+		this.orderCost = orderCost;
+	}
+
+
+	public Order(int quantity, Product product){
 		this.quantity=quantity;
-		this.pizza=pizza;	
+		this.product=product;
+		orderCost=quantity*product.getTotalCostIngredientsList();
 		}
 
 	
@@ -19,13 +32,17 @@ public class Order {
 		this.quantity = quantity;
 	}
 
-	public AbstractPizza getPizza() {
-		return pizza;
+
+	public Product getProduct() {
+		return product;
 	}
 
-	public void setPizza(AbstractPizza pizza) {
-		this.pizza = pizza;
+
+	public void setProduct(Product product) {
+		this.product = product;
 	}
 
+	
+	
 	
 }
