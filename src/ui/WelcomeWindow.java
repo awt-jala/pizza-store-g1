@@ -1,14 +1,18 @@
 package ui;
 
 import javax.swing.*;
-import java.awt.Color;
+
+import main.java.p1.IngredientType;
+
 import java.awt.event.*;
 import java.awt.*;
 
-public class WelcomeWindow extends JFrame implements ActionListener {
+public class WelcomeWindow extends JFrame implements ItemListener {
 
 	private JLabel lblName, lblLogo;
 	private JButton button1;
+	private JLabel lblBranch;
+	private JComboBox comboBoxBranch;
 
 	public WelcomeWindow() {
 		setLayout(null);
@@ -19,7 +23,7 @@ public class WelcomeWindow extends JFrame implements ActionListener {
 
 		ImageIcon image = new ImageIcon("Resources/Images/pizzeria.jpg");
 		lblLogo = new JLabel(image);
-		lblLogo.setBounds(25, 120, 500, 300);
+		lblLogo.setBounds(25, 120, 450, 250);
 		add(lblLogo);
 
 		lblName = new JLabel("Pizzeria Claudini & Carlini");
@@ -28,20 +32,52 @@ public class WelcomeWindow extends JFrame implements ActionListener {
 		lblName.setForeground(new Color(15, 20, 80));
 		add(lblName);
 
-		button1 = new JButton("Ingresar");
+		lblBranch = new JLabel("Select a Branch: ");
+		lblBranch.setBounds(70, 380, 150, 30);
+		lblBranch.setFont(new Font("Arial", 3, 16));
+		lblBranch.setForeground(new Color(15, 20, 80));
+		add(lblBranch);
+		comboBoxBranch = new JComboBox();
+		comboBoxBranch.setBounds(200, 380, 200, 30);
+		comboBoxBranch.addItem("elija una opcion");
+		comboBoxBranch.addItem("Branch A");
+		comboBoxBranch.addItem("Branch B");
+		add(comboBoxBranch);
+		comboBoxBranch.addItemListener(this);
+		
+		/*button1 = new JButton("Ingresar");
 		button1.setBounds(225, 450, 100, 30);
 		button1.setBackground(new Color(255, 255, 255));
 		button1.setFont(new Font("Andale Mono", 1, 16));
 		button1.setForeground(new Color(255, 0, 0));
 		button1.addActionListener(this);
-		add(button1);
+		add(button1);*/
 	}
+	
 
-	// @Override
-	public void actionPerformed(ActionEvent e) {
-		if (e.getSource() == button1) {
-
-		}
+	
+	@Override
+	public void itemStateChanged(ItemEvent e) {
+		
+		if (e.getSource() == comboBoxBranch) {
+			String Branch= comboBoxBranch.getSelectedItem().toString();	
+			if(Branch.equals("Branch A")) {
+			ConfigureOrderA win = new ConfigureOrderA();
+	         win.setBounds(0, 0, 1100, 550);
+	         win.setVisible(true);
+	         win.setResizable(false);
+	         win.setLocationRelativeTo(null);
+	         this.setVisible(false);
+			}
+			else {
+				OrderListBranchB win = new OrderListBranchB();
+		         win.setBounds(0,0,740,700);
+		         win.setVisible(true);
+		         win.setResizable(false);
+		         win.setLocationRelativeTo(null);
+		         this.setVisible(false);
+			}
+			}
 	}
 
 	public static void main(String args[]) {
@@ -51,5 +87,6 @@ public class WelcomeWindow extends JFrame implements ActionListener {
 		w.setResizable(false);
 		w.setLocationRelativeTo(null);
 	}
+	
 
 }

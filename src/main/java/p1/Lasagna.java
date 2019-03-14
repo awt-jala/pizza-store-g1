@@ -8,7 +8,15 @@ public abstract class Lasagna extends Product {
     double lasagnaCost;
     HashSet<IngredientsLasagna> ingredientsList = new HashSet<IngredientsLasagna>();
 
-    Lasagna(final LasagnaType lasagnaType) {
+    public HashSet<IngredientsLasagna> getIngredientsList() {
+		return ingredientsList;
+	}
+
+	public void setIngredientsList(HashSet<IngredientsLasagna> ingredientsList) {
+		this.ingredientsList = ingredientsList;
+	}
+
+	Lasagna(final LasagnaType lasagnaType) {
         this.lasagnaType = lasagnaType;
     }
 

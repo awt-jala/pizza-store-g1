@@ -7,9 +7,10 @@ import org.junit.jupiter.api.Test;
 import main.java.p1.AbstractPizza;
 import main.java.p1.FactoryBranchA;
 import main.java.p1.IngredientType;
+import main.java.p1.Ingredients;
 import main.java.p1.PizzaTypes;
 
-class ttttt {
+class Test_Remove_ingredient {
 
     @Test
     void test_Total_cost_remove_ingredients() {
@@ -25,4 +26,5 @@ class ttttt {
 
     }
 
+   
 }

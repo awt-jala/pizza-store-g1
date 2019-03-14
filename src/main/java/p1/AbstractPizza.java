@@ -3,81 +3,89 @@ package main.java.p1;
 import java.util.HashSet;
 
 public abstract class AbstractPizza extends Product {
-    private final PizzaTypes pizzaType;
-    double pizzaCost;
+	private final PizzaTypes pizzaType;
+	double pizzaCost;
 
-    HashSet<Ingredients> ingredientsList = new HashSet<Ingredients>();
+	HashSet<Ingredients> ingredientsList = new HashSet<Ingredients>();
 
-    AbstractPizza(final PizzaTypes pizzaType) {
-        this.pizzaType = pizzaType;
+	AbstractPizza(final PizzaTypes pizzaType) {
+		this.pizzaType = pizzaType;
 
-        // this.ingredientsList = new HashSet<Ingredients>();
+		// this.ingredientsList = new HashSet<Ingredients>();
 
-    }
+	}
 
-    public HashSet<Ingredients> getIngredientsList() {
-        return ingredientsList;
-    }
+	public HashSet<Ingredients> getIngredientsList() {
+		return ingredientsList;
+	}
 
-    public void setIngredientsList(final HashSet<Ingredients> ingredientsList) {
-        this.ingredientsList = ingredientsList;
-    }
+	public void setIngredientsList(final HashSet<Ingredients> ingredientsList) {
+		this.ingredientsList = ingredientsList;
+	}
 
-    public void showIngredients() {
-        for (final Ingredients ing : ingredientsList)
-            // System.out.println(mandatoryIngredients);
-            System.out.println(ing.getIngredientsType());
-    }
+	public void showIngredients() {
+		for (final Ingredients ing : ingredientsList)
+			// System.out.println(mandatoryIngredients);
+			System.out.println(ing.getIngredientsType());
+	}
 
-    public final void removeIngrediente(final Ingredients ingredient) { //
-        ingredientsList.remove(ingredient);
+	public final void removeIngrediente(final Ingredients ingredient) { //
+		ingredientsList.remove(ingredient);
 
-    }
+	}
 
-    public final void removeIngrediente(final IngredientType type) {
-        for (final Ingredients ing : ingredientsList) {
-            if (ing.getIngredientsType() == type) {
-                ingredientsList.remove(ing);
-            } //
-              // ingredientsList.remove(ingredient);
-        }
-    }
+	public final void removeIngrediente(IngredientType type) {
+		for (final Ingredients ing : ingredientsList) {
+			if (ing.getIngredientsType() == type) {
+				ingredientsList.remove(ing);
+			} //
+				// ingredientsList.remove(ingredient);
+		}
+	}
 
-    public final void aditionIngrediente(final Ingredients ingredient) {
-        ingredientsList.add(ingredient);
-    }
+	public final void aditionIngrediente(final Ingredients ingredient) {
+		ingredientsList.add(ingredient);
+	}
 
-    @Override
-    public String printType() {
-        final String type = "PIZZA " + pizzaType;
-        return type;
-    }
+	/*public final void aditionIngrediente(final IngredientType type) {
+		for (final Ingredients ing : ingredientsList) {
+			if (ing.getIngredientsType() != type) {
+				ingredientsList.add(new Ingredients(type));
+			}
+		}
+	}*/
 
-    public double getPizzaCost() {
-        return pizzaCost;
-    }
+	@Override
+	public String printType() {
+		final String type = "PIZZA " + pizzaType;
+		return type;
+	}
 
-    public void setPizzaCost(final double pizzaCost) {
-        this.pizzaCost = pizzaCost;
-    }
+	public double getPizzaCost() {
+		return pizzaCost;
+	}
 
-    public double totalCost(final HashSet<Ingredients> list) {
-        double sum = 0;
-        for (final Ingredients ing : list) {
-            sum = sum + ing.getPrice();
-        }
+	public void setPizzaCost(final double pizzaCost) {
+		this.pizzaCost = pizzaCost;
+	}
 
-        return pizzaCost + sum;
-    }
+	public double totalCost(final HashSet<Ingredients> list) {
+		double sum = 0;
+		for (final Ingredients ing : list) {
+			sum = sum + ing.getPrice();
+		}
 
-    @Override
-    public double getTotalCostIngredientsList() {
+		return pizzaCost + sum;
+	}
 
-        double sum = 0;
-        for (final Ingredients ing : ingredientsList) {
-            sum = sum + ing.getPrice();
-        }
+	@Override
+	public double getTotalCostIngredientsList() {
 
-        return pizzaCost + sum;
-    }
+		double sum = 0;
+		for (final Ingredients ing : ingredientsList) {
+			sum = sum + ing.getPrice();
+		}
+
+		return pizzaCost + sum;
+	}
 }
