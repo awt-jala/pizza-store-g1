@@ -4,21 +4,21 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Test;
 
-import main.java.p1.AbstractPizza;
-import main.java.p1.CheesePizzaBranchA;
-import main.java.p1.CheesePizzaBranchB;
-import main.java.p1.FactoryBranchA;
-import main.java.p1.FactoryBranchB;
-import main.java.p1.IngredientType;
-import main.java.p1.Ingredients;
-import main.java.p1.Lasagna;
-import main.java.p1.LasagnaBranchA;
-import main.java.p1.LasagnaBranchB;
-import main.java.p1.LasagnaType;
-import main.java.p1.Order;
-import main.java.p1.PizzaStore;
-import main.java.p1.PizzaTypes;
-import main.java.p1.Product;
+import abstractclases.Product;
+import factory.FactoryBranchA;
+import factory.FactoryBranchB;
+import ingredient.IngredientType;
+import ingredient.Ingredients;
+import pizza.AbstractPizza;
+import pizza.CheesePizzaBranchA;
+import pizza.CheesePizzaBranchB;
+import pizza.Lasagna;
+import pizza.LasagnaBranchA;
+import pizza.LasagnaBranchB;
+import pizza.LasagnaType;
+import pizza.PizzaTypes;
+import store.Order;
+import store.PizzaStore;
 
 class AbstractFactoryTest {
 

@@ -1,31 +1,27 @@
-package main.java.p1;
+package pizza;
 
-public class GreekPizzaBranchB extends AbstractPizza {
+import ingredient.IngredientType;
+import ingredient.Ingredients;
+
+public class GreekPizzaBranchA extends AbstractPizza {
     private static final double PIZZA_COST_BASE = 10;
-    Ingredients thin_dough;
+    Ingredients thick_dough;
     Ingredients greek_cheese;
     Ingredients olive;
-    Ingredients asparagus;
     Ingredients tomato_slices;
     
 
-    GreekPizzaBranchB() {
+    public GreekPizzaBranchA() {
         super(PizzaTypes.GREEK);
         pizzaCost = PIZZA_COST_BASE;
-        thin_dough = new Ingredients(IngredientType.THIN_DOUGH);
+        thick_dough = new Ingredients(IngredientType.THICK_DOUGH);
         greek_cheese = new Ingredients(IngredientType.GREEK_CHEESE);
         olive = new Ingredients(IngredientType.OLIVE);
         tomato_slices = new Ingredients(IngredientType.TOMATO_SLICES);
-        asparagus = new Ingredients(IngredientType.ASPARAGUS);
-       
 
-        ingredientsList.add(thin_dough);
+        ingredientsList.add(thick_dough);
         ingredientsList.add(greek_cheese);
         ingredientsList.add(olive);
         ingredientsList.add(tomato_slices);
-        ingredientsList.add(asparagus);
     }
-
-   
-
 }

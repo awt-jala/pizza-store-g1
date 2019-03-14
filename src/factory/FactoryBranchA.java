@@ -1,6 +1,19 @@
-package main.java.p1;
+package factory;
 
 import java.util.ArrayList;
+
+import abstractclases.AbstractFactory;
+import abstractclases.Product;
+import pizza.AbstractPizza;
+import pizza.CheesePizzaBranchA;
+import pizza.GreekPizzaBranchA;
+import pizza.Lasagna;
+import pizza.LasagnaBranchA;
+import pizza.LasagnaType;
+import pizza.PepperoniPizzaBranchA;
+import pizza.PizzaTypes;
+import pizza.VeggiePizzaBranchA;
+import store.Order;
 
 public class FactoryBranchA extends AbstractFactory {
     double orderListCost = 0;

@@ -1,4 +1,4 @@
-package main.java.p1;
+package pizza;
 
 public enum PizzaTypes {
 	CHEESE, 

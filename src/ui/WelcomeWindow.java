@@ -2,7 +2,7 @@ package ui;
 
 import javax.swing.*;
 
-import main.java.p1.IngredientType;
+import ingredient.IngredientType;
 
 import java.awt.event.*;
 import java.awt.*;
@@ -44,40 +44,36 @@ public class WelcomeWindow extends JFrame implements ItemListener {
 		comboBoxBranch.addItem("Branch B");
 		add(comboBoxBranch);
 		comboBoxBranch.addItemListener(this);
-		
-		/*button1 = new JButton("Ingresar");
-		button1.setBounds(225, 450, 100, 30);
-		button1.setBackground(new Color(255, 255, 255));
-		button1.setFont(new Font("Andale Mono", 1, 16));
-		button1.setForeground(new Color(255, 0, 0));
-		button1.addActionListener(this);
-		add(button1);*/
-	}
-	
 
-	
+		/*
+		 * button1 = new JButton("Ingresar"); button1.setBounds(225, 450, 100, 30);
+		 * button1.setBackground(new Color(255, 255, 255)); button1.setFont(new
+		 * Font("Andale Mono", 1, 16)); button1.setForeground(new Color(255, 0, 0));
+		 * button1.addActionListener(this); add(button1);
+		 */
+	}
+
 	@Override
 	public void itemStateChanged(ItemEvent e) {
-		
+
 		if (e.getSource() == comboBoxBranch) {
-			String Branch= comboBoxBranch.getSelectedItem().toString();	
-			if(Branch.equals("Branch A")) {
-			ConfigureOrderA win = new ConfigureOrderA();
-	         win.setBounds(0, 0, 1100, 550);
-	         win.setVisible(true);
-	         win.setResizable(false);
-	         win.setLocationRelativeTo(null);
-	         this.setVisible(false);
+			String Branch = comboBoxBranch.getSelectedItem().toString();
+			if (Branch.equals("Branch A")) {
+				ConfigureOrderA win = new ConfigureOrderA();
+				win.setBounds(0, 0, 1100, 550);
+				win.setVisible(true);
+				win.setResizable(false);
+				win.setLocationRelativeTo(null);
+				this.setVisible(false);
+			} else if (Branch.equals("Branch B")) {
+				ConfigureOrderB win = new ConfigureOrderB();
+				win.setBounds(0, 0, 1100, 550);
+				win.setVisible(true);
+				win.setResizable(false);
+				win.setLocationRelativeTo(null);
+				this.setVisible(false);
 			}
-			else {
-				OrderListBranchB win = new OrderListBranchB();
-		         win.setBounds(0,0,740,700);
-		         win.setVisible(true);
-		         win.setResizable(false);
-		         win.setLocationRelativeTo(null);
-		         this.setVisible(false);
-			}
-			}
+		}
 	}
 
 	public static void main(String args[]) {
@@ -87,6 +83,5 @@ public class WelcomeWindow extends JFrame implements ItemListener {
 		w.setResizable(false);
 		w.setLocationRelativeTo(null);
 	}
-	
 
 }

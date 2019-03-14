@@ -1,4 +1,4 @@
-package main.java.p1;
+package abstractclases;
 
 public abstract class Product {
 

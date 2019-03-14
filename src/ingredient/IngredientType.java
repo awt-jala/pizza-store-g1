@@ -1,4 +1,4 @@
-package main.java.p1;
+package ingredient;
 
 public enum IngredientType {
     // Pizza ingredients:

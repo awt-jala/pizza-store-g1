@@ -4,11 +4,11 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Test;
 
-import main.java.p1.AbstractPizza;
-import main.java.p1.FactoryBranchA;
-import main.java.p1.IngredientType;
-import main.java.p1.Ingredients;
-import main.java.p1.PizzaTypes;
+import factory.FactoryBranchA;
+import ingredient.IngredientType;
+import ingredient.Ingredients;
+import pizza.AbstractPizza;
+import pizza.PizzaTypes;
 
 class Test_Remove_ingredient {
 

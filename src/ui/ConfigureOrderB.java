@@ -21,7 +21,7 @@ import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
 import abstractclases.Product;
-import factory.FactoryBranchA;
+import factory.FactoryBranchB;
 import ingredient.IngredientType;
 import ingredient.Ingredients;
 import ingredient.IngredientsLasagna;
@@ -31,14 +31,13 @@ import pizza.LasagnaType;
 import pizza.PizzaTypes;
 import store.Order;
 import store.PizzaStore;
-
-public class ConfigureOrderA extends JFrame implements ItemListener {
+public class ConfigureOrderB extends JFrame implements ItemListener {
 	private final JLabel lblPizzaName, lblPizzaQuantity;
 	private final JComboBox<PizzaTypes> comboBoxPizza;
 	private final JList<IngredientType> defaultList;
 	private JTextField txtPizzaQuantity, tot;
 	private JTextField txtPriceOrder;
-	final FactoryBranchA factoryA = new FactoryBranchA();
+	final FactoryBranchB factoryB = new FactoryBranchB();
 	private JComboBox comboBoxAditionalIngredients;
 	Product product;
 	int Quantity;
@@ -47,7 +46,7 @@ public class ConfigureOrderA extends JFrame implements ItemListener {
 	private JLabel lblremove;
 	private JTextArea textarea1;
 	public static Order Orden;
-	public PizzaStore BranchA = new PizzaStore();
+	public PizzaStore BranchB = new PizzaStore();
 	private JScrollPane scrollpane1;
 	private JLabel lblcustom;
 	private JLabel lblorderlist;
@@ -58,7 +57,7 @@ public class ConfigureOrderA extends JFrame implements ItemListener {
 	private JLabel lblBranch;
 	private JLabel lbldef;
 
-	public ConfigureOrderA() {
+	public ConfigureOrderB() {
 
 		setLayout(null);
 
@@ -66,8 +65,7 @@ public class ConfigureOrderA extends JFrame implements ItemListener {
 		getContentPane().setBackground(new Color(176, 224, 231));
 		final ImageIcon icon = new ImageIcon("Resources/Images/icon.jpg");
 		setIconImage(icon.getImage());
-
-		lblBranch = new JLabel("BRANCH A ");
+		lblBranch = new JLabel("BRANCH B");
 		lblBranch.setBounds(10, 10, 150, 30);
 		lblBranch.setFont(new Font("Arial", 3, 18));
 		lblBranch.setForeground(new Color(200, 20, 80));
@@ -152,7 +150,6 @@ public class ConfigureOrderA extends JFrame implements ItemListener {
 		lbldef.setFont(new Font("Arial", 3, 16));
 		lbldef.setForeground(new Color(150, 20, 80));
 		add(lbldef);
-
 		defaultList = new JList();
 		defaultList.setBounds(50, 200, 180, 200);
 		defaultList.setVisibleRowCount(8);
@@ -206,14 +203,14 @@ public class ConfigureOrderA extends JFrame implements ItemListener {
 			public void actionPerformed(ActionEvent e) {
 				Order o1 = new Order(Quantity, product);
 				String texto = "";
-				BranchA.addToOrderlist(o1);
-				for (Order o : BranchA.orderList) {
+				BranchB.addToOrderlist(o1);
+				for (Order o : BranchB.orderList) {
 					texto += o.getProduct().printType() + "\n" + "precio base: "
 							+ o.getProduct().getTotalCostIngredientsList() + "\n" + "cantidad: " + o.getQuantity()
 							+ "\n" + "costo orden: " + o.getOrderCost() + "\n" + "------------" + "\n";
 
 					textarea1.setText(texto);
-					String tota=BranchA.calculateOrderListCost()+"";
+					String tota=BranchB.calculateOrderListCost()+"";
 					tot.setText(tota);
 
 				}
@@ -228,23 +225,22 @@ public class ConfigureOrderA extends JFrame implements ItemListener {
 		 */
 
 	}
-
 	@Override
 	public void itemStateChanged(final ItemEvent e) {
 		DefaultListModel<IngredientType> modelo = new DefaultListModel<IngredientType>();
 		DefaultListModel<IngredientType> modeloCustom = new DefaultListModel<IngredientType>();
 		if (e.getSource() == comboBoxPizza) {
-			final AbstractPizza pizzaA = factoryA.createPizza((PizzaTypes) comboBoxPizza.getSelectedItem());
-			product = pizzaA;
+			final AbstractPizza pizzaB = factoryB.createPizza((PizzaTypes) comboBoxPizza.getSelectedItem());
+			product = pizzaB;
 			// pizzaA.aditionIngrediente(new Ingredients(IngredientType.FRESH_CLAM));
-			for (Ingredients ing : pizzaA.getIngredientsList()) {
+			for (Ingredients ing : pizzaB.getIngredientsList()) {
 				modelo.addElement(ing.getIngredientsType());
 			}
 
 			defaultList.setModel(modelo);
 			int q = Integer.parseInt(txtPizzaQuantity.getText());
 			Quantity = q;
-			Order order = new Order(q, pizzaA);
+			Order order = new Order(q, pizzaB);
 
 			txtPriceOrder.setText(order.getOrderCost() + "");
 
@@ -285,7 +281,7 @@ public class ConfigureOrderA extends JFrame implements ItemListener {
 		}
 	
 		else if (e.getSource() == comboBoxlasagna) {
-			final Lasagna lasagna = factoryA.createLasagana((LasagnaType) comboBoxlasagna.getSelectedItem());
+			final Lasagna lasagna = factoryB.createLasagana((LasagnaType) comboBoxlasagna.getSelectedItem());
 			product = lasagna;
 			// pizzaA.aditionIngrediente(new Ingredients(IngredientType.FRESH_CLAM));
 			for (IngredientsLasagna ing : lasagna.getIngredientsList()) {
@@ -304,11 +300,13 @@ public class ConfigureOrderA extends JFrame implements ItemListener {
 	}
 
 	public static void main(final String args[]) {
-		final ConfigureOrderA formulario1 = new ConfigureOrderA();
-		formulario1.setBounds(0, 0, 1100, 550);
-		formulario1.setVisible(true);
-		formulario1.setLocationRelativeTo(null);
-		formulario1.setResizable(false);
+		final ConfigureOrderB formulario2 = new ConfigureOrderB();
+		formulario2.setBounds(0, 0, 1100, 550);
+		formulario2.setVisible(true);
+		formulario2.setLocationRelativeTo(null);
+		formulario2.setResizable(false);
 	}
+	
+	
 
 }

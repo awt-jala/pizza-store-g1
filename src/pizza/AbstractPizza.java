@@ -1,6 +1,10 @@
-package main.java.p1;
+package pizza;
 
 import java.util.HashSet;
+
+import abstractclases.Product;
+import ingredient.IngredientType;
+import ingredient.Ingredients;
 
 public abstract class AbstractPizza extends Product {
 	private final PizzaTypes pizzaType;

@@ -1,4 +1,4 @@
-package main.java.p1;
+package ingredient;
 
 import java.util.HashMap;
 import java.util.Map;

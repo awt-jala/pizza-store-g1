@@ -1,21 +1,23 @@
-package main.java.p1;
+package pizza;
 
-public class VeggiePizzaBranchA extends AbstractPizza {
+import ingredient.IngredientType;
+import ingredient.Ingredients;
+
+public class VeggiePizzaBranchB extends AbstractPizza {
     private static final double PIZZA_COST_BASE = 10;
-    Ingredients thick_dough;
+    Ingredients thin_dough;
     Ingredients plum_tomato_sauce;
-    Ingredients mozarella_cheese;
+    Ingredients parmesan_cheese;
     Ingredients pineapple;
     Ingredients olive;
     Ingredients broccoli;
-    Ingredients tomato_slices;
     Ingredients asparagus;
-
-    VeggiePizzaBranchA() {
+    Ingredients tomato_slices;
+    public VeggiePizzaBranchB() {
         super(PizzaTypes.VEGGIE);
         pizzaCost = PIZZA_COST_BASE;
-        thick_dough = new Ingredients(IngredientType.THICK_DOUGH);
-        mozarella_cheese = new Ingredients(IngredientType.MOZARELLA_CHEESE);
+        thin_dough = new Ingredients(IngredientType.THIN_DOUGH);
+        parmesan_cheese = new Ingredients(IngredientType.PARMESAN_CHEESE);
         broccoli = new Ingredients(IngredientType.BROCCOLI);
         plum_tomato_sauce = new Ingredients(IngredientType.PLUM_TOMATO_SAUCE);
         olive = new Ingredients(IngredientType.OLIVE);
@@ -23,8 +25,8 @@ public class VeggiePizzaBranchA extends AbstractPizza {
         tomato_slices = new Ingredients(IngredientType.TOMATO_SLICES);
         pineapple = new Ingredients(IngredientType.PINEAPPLE);
 
-        ingredientsList.add(thick_dough);
-        ingredientsList.add(mozarella_cheese);
+        ingredientsList.add(thin_dough);
+        ingredientsList.add(parmesan_cheese);
         ingredientsList.add(broccoli);
         ingredientsList.add(plum_tomato_sauce);
         ingredientsList.add(olive);
@@ -34,5 +36,4 @@ public class VeggiePizzaBranchA extends AbstractPizza {
     }
 
     
-
 }

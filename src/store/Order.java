@@ -1,4 +1,6 @@
-package main.java.p1;
+package store;
+
+import abstractclases.Product;
 
 public class Order {
 

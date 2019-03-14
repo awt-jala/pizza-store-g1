@@ -1,4 +1,7 @@
-package main.java.p1;
+package pizza;
+
+import ingredient.IngredientType;
+import ingredient.IngredientsLasagna;
 
 public class LasagnaBranchA extends Lasagna {
     private static final double LASAGNA_COST_BASE = 5;
