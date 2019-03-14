@@ -29,9 +29,9 @@ public abstract class AbstractPizza extends Product {
             System.out.println(ing.getIngredientsType());
     }
 
-    public final void removeIngrediente(final Ingredients ingredient) {
-        // ingredientsList.remove(ingredient);
+    public final void removeIngrediente(final Ingredients ingredient) { //
         ingredientsList.remove(ingredient);
+
     }
 
     public final void removeIngrediente(final IngredientType type) {
